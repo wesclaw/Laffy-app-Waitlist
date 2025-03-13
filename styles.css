@@ -115,3 +115,9 @@ section{
 span{
   font-weight: bold;
 }
+
+@media(max-width: 300px){
+  p{
+    max-width: 100%;
+  }
+}

@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
         <h1>Laffy</h1>
         <h2>Make every second count</h2>
         <p>
-          Remember <span style="color: #00B489">Vine</span> and <span style="color:#D32F2F ">America's Funniest Home Videos</span>? Welcome to Laffy, the app where you can upload and watch 10-second comedy clips.
+          Remember <span style="color: #00B489">Vine</span> and <span style="color:#D32F2F ">America's Funniest Home Videos</span>? Welcome to Laffy, the app where you can upload and watch 10-second funny videos.
         </p>
         <section>
         <h5>Join the waitlist!</h5>
