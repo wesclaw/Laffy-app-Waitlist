@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
           font-style: normal;
           color: rgb(241, 63, 63); text-decoration: underline;" >Laffy</span>, the app where you can watch and upload 10-second funny video clips.
         </p>
-        <section>
+        <!-- <section>
         <h5>Join the waitlist!</h5>
         <p class="waitlistText">I will only contact you with launch news—no spam, no extra emails.</p>
       
@@ -105,7 +105,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
           </div>
             
         </form>
+        </section> -->
+
+
+
+
+
+        <section>
+          <div class="top-text">
+          <h5 class="joinText">Join the waitlist!</h5>
+          <p class="waitlistText">I will only contact you with launch news—no spam, no extra emails.</p>
+          </div>
+        <form action="index.php" method="POST">
+          <div>
+            <div>
+            <input type="email" name="email" placeholder="Email" class="input_el" required>
+            <input type="submit" value="Join!" class="submit_btn">
+            </div>
+            <div style="width: 100%; display: flex; justify-content: center; margin-top: 10px;">
+            <div class="g-recaptcha" data-sitekey="6Leap_MqAAAAAH-IrhtQeXmuLt0c5-2dGBB1Uvjf" data-action="LOGIN"></div>
+            </div>
+            
+          </div>         
+        </form>
         </section>
+
+
+
+
+
 
         <?php if ($successMessage): ?>
         <p style="color: green; margin-top: 30px; font-family: sans-serif;"><?php echo $successMessage; ?></p>
