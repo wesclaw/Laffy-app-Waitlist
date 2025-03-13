@@ -78,8 +78,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css">
-    
   </head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JQL8NV569K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JQL8NV569K');
+  </script>
   <body>
   <div class="container">
       <main>
