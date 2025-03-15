@@ -2,6 +2,16 @@
 
 require_once 'connect.php';  
 
+$sql = "SELECT COUNT(*) AS total_signups FROM email_list";
+$stmt = mysqli_prepare($conn, $sql); 
+
+mysqli_stmt_execute($stmt);
+
+// Bind the result
+mysqli_stmt_bind_result($stmt, $totalSignups);
+
+// Fetch the result
+mysqli_stmt_fetch($stmt);
 
 $successMessage = '';
 $errorMessage = '';
@@ -73,6 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
     <link rel="stylesheet" href="src/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
       rel="stylesheet"
@@ -93,30 +104,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'])) {
         <h1>Laffy</h1>
         <h2>Make every second count</h2>
         <p>
-          Remember <span style="color: #00B489">Vine</span> and <span style="color:#D32F2F ">America's Funniest Home Videos</span>? Welcome to <span style="font-family: 'Pacifico', cursive;
+          Remember <span style="color: #00B489">Vine</span> or <span style="color:#D32F2F ">America's Funniest Home Videos</span>? Welcome to <span style="font-family: 'Pacifico', cursive;
           font-weight: 400;
           font-style: normal;
           color: rgb(241, 63, 63); text-decoration: underline;" >Laffy</span>, the app where you can watch and upload 10-second funny video clips.
         </p>
-        <!-- <section>
-        <h5>Join the waitlist!</h5>
-        <p class="waitlistText">I will only contact you with launch news—no spam, no extra emails.</p>
-      
-        <form action="index.php" method="POST">
-          <div style="display: flex; flex-direction: column; width: 100%; align-items: center;">
-            <div class="inputs">
-            <input type="email" name="email" placeholder="Email" class="input_el" required>
-            <input type="submit" value="Join!" class="submit_btn">
-            </div>
-            <div class="g-recaptcha" data-sitekey="6Leap_MqAAAAAH-IrhtQeXmuLt0c5-2dGBB1Uvjf" data-action="LOGIN"></div>
-          </div>
-            
-        </form>
-        </section> -->
 
+        
 
+        <!-- <div style="margin-bottom: 20px;">
+        <h6>Join <span class="numberOfEmails"><?php echo $totalSignups?></span> others — only 10,000 spots for beta! </h6>
+        </div> -->
 
-
+        <div style="margin-bottom: 20px; font-family: 'Roboto', sans-serif;">
+    <h6 style="font-size: 18px; color: #333333; font-weight: 500;">
+        Join <span class="numberOfEmails" style="font-weight: 700; color: #007bff;"><?php echo $totalSignups?></span> others — 10,000 spots for beta
+    </h6>
+</div>
 
         <section>
           <div class="top-text">
